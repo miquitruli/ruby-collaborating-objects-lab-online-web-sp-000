@@ -10,4 +10,8 @@ class Artist
 
   def add_song
   end
+
+  def.self.all
+    @@all
+  end
 end
