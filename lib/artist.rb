@@ -1,5 +1,5 @@
 class Artist
-  attr_accessor :name
+  attr_accessor :name, :songs
 
   @@all=[]
 
@@ -8,7 +8,8 @@ class Artist
     @@all<<self
   end
 
-  def add_song
+  def add_song(song)
+    @songs<<song
   end
 
   def self.all
@@ -18,4 +19,17 @@ class Artist
   def songs
     Song.all.select{|s|s.artist==self}
   end
+
+  def self.find_or_create_by_name(artist_name)
+    found_artist = self.all.find {|artist| artist.name == artist_name}
+    if found_artist
+      found_artist
+    else
+      new_artist = self.new(artist_name)
+      new_artist.save
+      new_artist
+    end
+  end
 end
+ ##add_song
+    #takes in an argument of a song and associates that song with the artist by telling the song that it belongs to that artist
