@@ -30,6 +30,12 @@ class Artist
       new_artist
     end
   end
+
+  def print_songs
+    @songs.each do |s|
+      puts s.name
+    end
+  end
 end
  ##add_song
     #takes in an argument of a song and associates that song with the artist by telling the song that it belongs to that artist
