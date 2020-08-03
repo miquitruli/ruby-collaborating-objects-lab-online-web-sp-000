@@ -19,4 +19,8 @@ class Song
     new_s
   end
 
+  def self.all
+    @@all
+  end
+
 end
