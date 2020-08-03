@@ -1,10 +1,8 @@
 class Song
   attr_accessor :name, :artist
-  @@all=[]
 
   def initialize(name)
     @name=name
-    @@all << self
   end
 
   def artist_name=(name)
@@ -18,10 +16,6 @@ class Song
     song = Song.new(split_file[1])
     song.artist = Artist.find_or_create_by_name(split_file[0])
     song
-  end
-
-  def self.all
-    @@all
   end
 
 end
