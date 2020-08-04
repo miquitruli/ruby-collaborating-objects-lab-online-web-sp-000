@@ -8,7 +8,6 @@ class Song
 
   def initialize(name)
     @name=name
-    @@all << self
   end
 
   def self.find_by_artist(artist)
@@ -23,7 +22,6 @@ class Song
     artist, song = file.split(" - ")
     new_song = self.new(song)
     new_song.artist_name = artist
-  #  binding.pry
     new_song.save
   end
 
