@@ -24,4 +24,9 @@ class Song
     song.save
   end
 
+  def save
+    @@all << self
+    @self
+  end
+
 end
